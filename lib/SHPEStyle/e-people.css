@@ -1,0 +1,13 @@
+#background {background:#ECECEC}
+#mailto:active {
+color:#FF6103;
+}
+
+.info h3 {
+margin: 0px 0 20px 0;font-family:"Arial";font-weight:bold}
+
+.info img { 
+margin: 10px 20px 20px 20px;
+width:120px;
+height:180px;
+}

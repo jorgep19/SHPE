@@ -1,0 +1,26 @@
+		img{
+			width:100%;
+			
+		}
+		.thumb {
+		position: absolute;
+		left: 1px;
+		top: 0;
+		max-height: 78px;
+		max-width: 80px;
+		float: left;
+		margin-right: 10px;
+		}
+		.eboardicon{
+			width: 42px;
+			max-height: 40px;
+		}
+	    .buttons{
+		 position: center;
+		 width: 35px;
+		 max-height: 35px;
+		}
+		
+		.textcolor{
+			color: white;
+		}

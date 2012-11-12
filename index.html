@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>SHPE-UF</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="apple-touch-icon" href="imgs/SHPE_icon.png" type="" />
+		<!-- TODO apple icon for android -->
+		<link rel="apple-touch-startup-image" href="imgs/SHPE_Logo.png" />
+		<!-- TODO MAKE A SPLASH SCREEN for android -->
+		
+		<!-- JQM and JQuery js and css files -->
+		<script src="lib/jquery/jquery.js"></script>
+		<script src="lib/jquery.mobile/jquery.mobile.js"></script>
+		<link rel="stylesheet" href="lib/jquery.mobile/jquery.mobile.css"/>
+		
+		<!-- KnockoutJs -->
+		<script src="lib/knockoutJS/knockout.js"></script>
+		
+		<!-- slideShow Plugin -->
+		<link rel='stylesheet' id='camera-css'  href='lib/cameraPlugin/camera.css' type='text/css' media='all'>
+		<script type="text/javascript" src="lib/cameraPlugin/jquery.easing.1.3.js"></script> 
+		<script type="text/javascript" src="lib/cameraPlugin/camera.min.js"></script> 		
+		<script>
+			jQuery(function(){
+				jQuery('#welcomeSlidshow').camera({
+					thumbnails: false
+				});
+			});
+		</script>
+		
+		<!-- SHPE css-->
+		<link rel="stylesheet" href="lib/SHPEStyle/SHPEStyle.css"/>
+		
+		<!-- SHPE scripts and VM-->
+		<script type="text/javascript" src="lib/SHPEScripts/CompaniesData.js"></script> 
+		<script type="text/javascript" src="lib/SHPEScripts/companyDataVM.js"></script> 
+		<script type="text/javascript" src="lib/SHPEScripts/companySearchVM.js"></script>
+		<script type="text/javascript" src="lib/SHPEScripts/appBindingsSetup.js"></script> 
+		
+	</head>
+
+	<body>
+		<!-- Beginning Home Page-->
+		<div data-role="page" data-title="SHPE-UF" id="home">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<h1>SHPE-UF app</h1>
+				<a href="#aboutThisApp"	class="ui-btn-right" data-theme="e"  data-iconpos="notext" data-icon="info" data-rel="dialog"></a>
+			</div><!-- end Header -->
+			
+			<div data-role="content">
+				<div class="fluid_container">
+					<div class="camera_wrap camera_azure_skin" id="welcomeSlidshow">
+								<div data-thumb="imgs/slideshow/pic1.png" data-src="imgs/slideshow/pic1.png"></div>
+								<div data-thumb="imgs/slideshow/pic2.png" data-src="imgs/slideshow/pic2.png"></div>
+								<div data-thumb="imgs/slideshow/pic3.png" data-src="imgs/slideshow/pic3.png"></div>
+								<div data-thumb="imgs/slideshow/pic4.png" data-src="imgs/slideshow/pic4.png"></div>
+								<div data-thumb="imgs/slideshow/pic5.png" data-src="imgs/slideshow/pic5.png"></div>
+								<div data-thumb="imgs/slideshow/pic6.png" data-src="imgs/slideshow/pic6.png"></div>
+								<div data-thumb="imgs/slideshow/pic7.png" data-src="imgs/slideshow/pic7.png"></div>
+								<div data-thumb="imgs/slideshow/pic8.png" data-src="imgs/slideshow/pic8.png"></div>
+								<div data-thumb="imgs/slideshow/pic9.png" data-src="imgs/slideshow/pic9.png"></div>
+					</div> 
+				</div><!-- end slideshow -->
+			</div>
+			
+			<div data-role="controlgroup">
+				<a href="#calendar" data-role="button" data-icon="SHPECalendarIcon" data-theme="b">
+					Calendar</a>
+				<a href="#eBoard" data-role="button" data-icon="SHPEEboardIcon" data-theme="b">
+					E-Board</a>
+				<a href="https://twitter.com/SHPEUF" data-role="button" data-icon="SHPETwitterIcon" data-theme="b">
+					Twitter</a>
+				<a href="#facebook" data-role="button" data-icon="SHPEFbIcon" data-theme="b">
+					Facebook</a>
+				<a href="#companies" data-role="button" data-icon="SHPECompaniesIcon" data-theme="b">
+					Company Database</a>
+				<a href="#devTeam" data-role="button" data-icon="SHPEContactIcon" data-theme="b">
+					Developer Team Contact</a>
+			</div>
+
+		</div><!-- end Home Page -->
+		
+		<!-- Beginning About Page -->
+		<div data-role="page" id="aboutThisApp">
+			<div data-role="header" data-theme="b">
+				<h1>About SHPE-UF app</h1>
+			</div>
+			
+			<div data-role="content">
+				<p>This application was created for, but not limited to, University of Florida SHPE members.
+				The app is a handy database that offers a quick look at any company you wish to obtain 
+				information about. Each company has three major subdivisions. At a Glance will offer the 
+				user a quick overview of the company, this includes what industry they belong to, a brief 
+				explanations of the company's history, and their contact information. The second subdivision 
+				is the Company Summary and it consists of a more in depth description of what can be found 
+				in At a Glance and some other key pieces of information like what kind of majors are they 
+				looking to employ. Lastly we have the News subdivision, which is a link to the latest news 
+				about the company you are researching.</p>
+				
+				<p>In here you will have direct access to every SHPE announcement being posted on Twitter and
+				Facebook, making it easier for you to keep track of things. Also, you are being provided 
+				with a detailed information on SHPE's E-Board members, stalking has never been simpler. Last 
+				but certanly not least, we provide our Developer Team's contact information in case 
+				you want to know more about the app or whish to tell us how to improve your experience as 
+				a user, we understand that there is always room for improvement and your opinion is valued.</p>
+				
+				<p>Special recognition goes to Erik Rodriguez, Project Director; Jorge Paez, Architect and 
+				Developer; Horacio Delgado, Developer; Irene Freire, Developer; Daniel Rincon, Developer;
+				Daniel Fuentes, Developer; ... and others...</p>
+				
+				<p>Thank you for using SHPE-UF app.</p>
+				<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="e">
+					OK</a>
+			</div>
+		</div> <!-- end About Page -->
+	
+		<!-- Beginning facebook Page-->
+		<div data-role="page" id="facebook">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>Facebook</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<!-- Start of Content-->
+			<div data-role="content">
+			
+			<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FSHPEatUF%3Ffref%3Dts&amp;width=292&amp;height=510&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23FFA500&amp;stream=true&amp;header=false" 
+				  frameborder="0" style="border-width:0; overflow:hidden" width=100% height="550"></iframe>
+				  
+			</div><!-- End of Content-->
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end facebook Page-->
+		
+		<!-- Beginning Calendar Page-->
+		<div data-role="page" id="calendar">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>Calendar</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<iframe src="https://www.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;height=480&amp;wkst=1&amp;bgcolor=%23ff6600&amp;src=shpe.uf%40gmail.com&amp;color=%23182C57&amp;ctz=America%2FNew_York" 
+					<style=" border-width:0 " width=100% height="500" frameborder="0">
+				</iframe>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Calendar Page-->
+		
+		<!-- Beginning E-Board Page-->
+		<div data-role="page" id="eBoard">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>E-Board</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<img border="0" src="imgs/eboard/shpe_eboard.png" style="width:100%;" />
+	
+				<ul data-role="listview"  >
+
+					<li><a href="#president">
+						<img src="imgs/eboard/midori.png" class="thumb"/>
+						<h3>President</h3>
+						<p >Midori Madea</p></a></li>
+					<li><a href="#internal">
+						<img src="imgs/eboard/Ivan.png" class="thumb"/>
+						<h3>VP Internal</h3>
+						<p>Ivan Gutierrez</p></a></li>
+					<li><a href="#external">
+						 <img src="imgs/eboard/natalie.png" class="thumb"/>
+						 <h3>VP External</h3>			
+						 <p>Natalie Devarona</p></a></li>
+					<li><a href="#marketing">
+						 <img src="imgs/eboard/erik.png" class="thumb"/>
+						 <h3>VP Marketing</h3>
+						 <p>Erik Rodriguez</p></a></li>
+					<li><a href="#corporate">
+						 <img src="imgs/eboard/valentina.png" class="thumb"/>
+						 <h3>VP Corporate</h3>
+						 <p>Valentina E. Vincentelli</p></a></li>
+					<li><a href="#secretary">
+						 <img src="imgs/eboard/anacorina.png" class="thumb"/>
+						 <h3>Secretary</h3>
+						 <p>Anacorina Aguerrevere</p></a></li>
+					<li><a href="#treasurer">
+						 <img src="imgs/eboard/maria.png" class="thumb"/>
+						 <h3>Treasurer</h3>
+						 <p>Maria Elisa de Castro</p></a></li>
+					<li><a href="#graduate">
+						 <img src="imgs/eboard/colon.png" class="thumb"/>
+						 <h3>Graduate Coordinator</h3>
+						 <p>Colon S. Zamora</p></a></li>
+					<li><a href="#webmaster">
+						 <img src="imgs/eboard/pablo.png" class="thumb"/>
+						 <h3>Webmaster</h3>
+						 <p>Pablo Corredor</p></a></li>
+				</ul>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end E-Board Page-->
+		
+		<!-- Beginning President Page-->
+		<div data-role="page" id="president">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>President</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Midori Madea</h3>
+				</center>
+				<p><img src="imgs/eboard/midori.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />B.S. Materials Science and Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Third
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />2014
+				</p>
+				<p><b>Nationality:</b>
+					<br />Ecuadorian/Mexican
+				</p>
+				<p><b>Work Experience:</b>
+					<br />Summer 2012: Air Force Research Lab Engineering Intern
+					<br />
+					<br />2010-2012: Materials Engineering Research Assistant
+				</p>
+				<p><b>Career Goals:</b>
+					<br />To create or work for a company which contributes 
+					  to medical advances through biomaterial innovations.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>To provide the best events and services so each member 
+					  may build superior skills in the following areas: academics, 
+					  professionalism, leadership, and service.
+					  <br></br>
+					  The vision is for our SHPE-UF generation to yield the 
+					  most outstanding and experienced students comprised of future CEO’s, 
+					  scientists, and leaders in their fields of study.</br>
+				</p>
+				<p><b>Contact Info:</b>
+					<a id="mailto" href="mailto:president.shpeuf@gmail.com">president.shpeuf@gmail.com</a>
+				</p>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end President Page-->
+		
+		<!-- Beginning VP Internal Page-->
+		<div data-role="page" id="internal">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>VP Internal</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Ivan</h3>
+				</center>
+				<p><img src="imgs/eboard/Ivan.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />Aerospace Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Second
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />May 2015
+				</p>
+				<p><b>Nationality:</b>
+					<br />Colombia
+				</p>
+				<p><b>Career Goals:</b>
+				   <br />Attain Masters in Aerospace Engineering and become a lead engineer for SPACEX.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>Increase student membership in SHPE UF by creating fun and innovative events.
+					  <br></br>
+					  Maintain student involvement.
+					  <br></br>
+					  Create a mentorSHPE program that will strengthen friendships and improve student life in UF.</br>
+				</p>
+				<p><b>Contact Info:</b>
+				   <a id="mailto" href="mailto:vpinternal.shpeuf@gmail.com">vpinternal.shpeuf@gmail.com</a>
+				</p>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end VP Internal Page-->
+		
+		<!-- Beginning VP external Page-->
+		<div data-role="page" id="external">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>VP External</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Natalie DeVarona</h3>
+				</center>
+				<p><img src="imgs/eboard/natalie.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />B.S. Industrial and Systems Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Second
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />2015
+				</p>
+				<p><b>Nationality:</b>
+					<br/>Cuban/Nicaraguan
+				</p>
+				<p><b>Work Experience:</b>
+					<br/>2012 - Product Supply Manufacturing Engineering Intern at Procter & Gamble 
+				</p>
+				<p><b>Career Goals:</b>
+					<br />Work in the industry at a managerial level, leveraging 
+					  my skills and knowledge to lead others in a joint effort 
+					  to drive results and promote a culture of integrity and passion 
+					  for our product.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+				   <br>Improve SHPE-UF’s existing external events by increasing 
+					  participation and expanding our influence and mission to our community and abroad.
+					  <br></br>
+					  Introduce a new event and successfully lead SHPE-UF on its 
+					  inaugural service trip to Nicaragua.</br>
+				</p>
+				<p><b>Contact Info:</b>
+				   <a id="mailto" href="mailto:vpexternal.shpeuf@gmail.com">vpexternal.shpeuf@gmail.com</a>
+				</p>
+			
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end VP External Page-->
+		
+		<!-- Beginning VP Marketing Page-->
+		<div data-role="page" id="marketing">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>VP Marketing</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Erik Rodriguez</h3>
+				</center>
+				<p><img src="imgs/eboard/erik.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />Industrial and Systems Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Senior
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />May 2013
+				</p>
+				<p><b>Nationality:</b>
+					<br />Cuban/Ecuadorian
+				</p>
+				<p><b>Work Experience:</b>
+					<br />IE Co-op Walt Disney World 
+					<br />
+					<br />Warehouse Assistant Supervisor at Cosmetic Corp. of America
+				</p>
+				<p><b>Career Goals:</b>
+					<br />Become CEO of the Walt Disney Company
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>To expand the organization like never before and give back 
+					to not only the chapter, but to the community as a whole.
+					</br>
+				</p>
+				<p><b>Contact Info:</b>
+					<a id="mailto" href="mailto:vpmarketing.shpeuf@gmail.com">vpmarketing.shpeuf@gmail.com</a>
+				</p>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end VP Marking Page-->
+		
+		<!-- Beginning VP Corporate Page-->
+		<div data-role="page" id="corporate">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>VP Corporate</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Valentina Vincentelli</h3>
+				</center>
+				<p><img src="imgs/eboard/valentina.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />B.S. Industrial and Systems Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Second
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />May 2015
+				</p>
+				<p><b>Nationality:</b>
+					<br />Venezuelan
+				</p>
+				<p><b>Work Experience:</b>
+					<br />2012: P&G Supply networks operations Intern
+				</p>
+				<p><b>Career Goals:</b>
+					<br />Work in a fortune 500 company after graduating. I would like 
+					  to apply the analytical and quantitative skills from my engineering 
+					  career to help solve everyday problems in the business world.
+					<br />
+					<br />At some point of my professional career, I would like to take an 
+					  international assignment and experience the culture of a developing 
+					  world and market, such as in India.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>Increase corporate sponsorship, as well as member-company interaction.
+					<br></br>
+					Ensure that our members have all the exposure and communication with 
+					companies they need at all times.</br>
+				</p>
+				<p><b>Contact Info:</b>
+				   <a id="mailto" href="mailto:vpcorporate.shpeuf@gmail.com">vpcorporate.shpeuf@gmail.com</a>
+				</p>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end VP Corporate Page-->
+		
+		<!-- Beginning Secretary Page-->
+		<div data-role="page" id="secretary">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>Secretary</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Anacorina Aguerrevere</h3>
+				</center>
+				<p><img src="imgs/eboard/anacorina.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />B.S. Industrial and Systems Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Second
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />May 2015
+				</p>
+				<p><b>Nationality:</b>
+					<br />Venezuelan
+				</p>
+				<p><b>Work Experience:</b>
+					<br />Corporate Supply Chain Management Intern at Eaton Corporation
+				</p>
+				<p><b>Career Goals:</b>
+					<br />Work for a company that focuses on consumer’s everyday needs, allowing
+					me to contribute my communication, leadership, and problem solving skills to
+					benefit diverse communities and less developed countries.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>Increase active membership in SHPE-UF by keeping members well-informed of
+					upcoming events and motivating them to take full advantage of the opportunities
+					SHPE has to offer.
+					<br></br>
+					Maintain an organized record of all of SHPE UF’s events, pictures, and meetings
+					for future reference.</br>
+				</p>
+				<p><b>Contact Info:</b>
+					<a id="mailto" href="mailto:secretary.shpeuf@gmail.com">secretary.shpeuf@gmail.com</a>
+				</p>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Secretary Page-->
+		
+		<!-- Beginning Treasurer Page-->
+		<div data-role="page" id="treasurer">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>Treasurer</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+				   <h3>Maria Elisa De Castro</h3>
+				</center>
+				<p><img src="imgs/eboard/maria.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />B.S. Chemical Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Second
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />May 2015
+				</p>
+				<p><b>Nationality:</b>
+					<br />Venezuelan
+				</p>
+				<p><b>Career Goals:</b>
+					<br/>Work for a food processing company, creating products 
+					consumers can enjoy while maintaining a healthy lifestyle.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>Maintain an organized and balanced budget.
+					<br></br>
+					Keep members informed on scholarship opportunities and deadlines.
+					<br></br>
+					Optimize the use of BEC and SHPE funds.</br>
+				</p>
+				<p><b>Contact Info:</b>
+					<a id="mailto" href="mailto:treasurer.shpeuf@gmail.com">treasurer.shpeuf@gmail.com</a>
+				</p>
+			
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Treasurer Page-->
+		
+		<!-- Beginning Graduate Coordinator Page-->
+		<div data-role="page" id="graduate">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>Graduate Coordinator</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Colón S Zamora</h3>
+				</center>
+				<p><img src="imgs/eboard/colon.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br />M.S. Electrical Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br />Second
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br/>May 2013
+				</p>
+				<p><b>Nationality:</b>
+					<br />Ecuadorian
+				</p>
+				<p><b>Work Experience:</b>
+					<br/>2009: Intel, lithography process engineer
+					<br/>
+					<br/>2010-11: Intel, post-silicon validation engineer
+					<br/>
+					<br/>2012: Intel, enterprise power deliver engineer
+					</p>
+				<p><b>Career Goals:</b>
+					<br/>Become lead designer on Intel Architecture and
+					help lead the company from a corporate role.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>Increase graduate student membership and participation.
+					<br></br>
+					Increase number of minority graduate students through education and guidance.</br>
+				</p>
+				<p><b>Contact Info:</b>
+					<a id="mailto" href="mailto:graduate.shpeuf@gmail.com">graduate.shpeuf@gmail.com</a>
+				</p>			
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Graduate Coordinator Page-->
+		
+		<!-- Beginning Webmaster Page-->
+		<div data-role="page" id="webmaster">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>Webmaster</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<center>	
+					<h3>Pablo Corredor</h3>
+				</center>
+				<p><img src="imgs/eboard/pablo.png" align="right"/></p>
+				<p><b>Major:</b> 
+					<br/>B.S. Industrial and Systems Engineering
+				</p>
+				<p><b>Year:</b> 
+					<br/>Fourth
+				</p>
+				<p><b>Expected Graduation:</b>
+					<br />May 2014
+				</p>
+				<p><b>Nationality:</b>
+					<br/>Colombian
+				</p>
+				<p><b>Work Experience:</b>
+				  <br/>Advisor at Apple Inc (2012-Present)
+				  <br/>
+				  <br/>Sales Agent at AT&T Uverse (2011)
+				</p>
+				<p><b>Career Goals:</b>
+					<br/>Foster an idea that is able to grow and 
+					not only serve as a beautiful business 
+					opportunity, but also have a positive impact on our everyday life.
+				</p>
+				<p><b>SHPE-UF Goals:</b>
+					<br>Help increase the potential of this organization 
+					by keeping it up to date with innovative technologies.</br>
+				</p>
+				<p><b>Contact Info:</b>
+					<a id="mailto" href="mailto:webmaster.shpeuf@gmail.com">webmaster.shpeuf@gmail.com</a>
+				</p>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end webmaster Page-->
+				
+		<!-- Beginning Company Database Page-->
+		<div data-role="page" id="companies">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1>Company Database</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">	
+				<ul data-role="listview" data-filter="true">
+					<!-- ko foreach: companiesAvailable, updateListviewOnChange:companiesAvailable -->
+					<li>
+						<a data-bind="click: $parent.companyClicked">
+						<img data-bind="attr: { src: 'imgs/logos/' + logoUrl }" class="companyLogoThumb"/>
+						<h3 data-bind="text: name"></h3>
+					  </a>
+					</li>
+					 <!-- /ko -->
+				</ul>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Company Database Page-->
+		
+		<!-- Beginning Company Summary Page-->
+		<div data-role="page" id="companySummary">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1 data-bind="text: name()"></h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">	
+				<img data-bind="attr: { src: 'imgs/logos/' + logoUrl() }" class="summaryLogo"/>
+				
+				<a data-role="button" data-bind="click: glanceClicked" data-theme="b">
+					At a Glance</a>
+				<a data-role="button" data-bind="click: detailClicked" data-theme="b">
+					Detail</a>
+				<a data-role="button" data-bind="attr :{ href: news()}" data-theme="b">
+					News</a>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Company Summary Page-->
+		
+		<!-- Beginning Company at a Glance Page-->
+		<div data-role="page" id="companyGlance">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1 data-bind="text: name()"></h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">	
+					<img data-bind="attr: { src: 'imgs/logos/' + logoUrl() }" class="summaryLogo"/>
+					<div>
+					<p> <b>Founded: </b> <br>
+						<!-- ko foreach: founded, updateListviewOnChange:founded -->
+						<span data-bind="text: $data"></span> <br>
+						<!-- /ko -->
+					</p>
+					<p> <b>Slogan: </b> <br>
+						<!-- ko foreach: slogan, updateListviewOnChange:slogan -->
+						<span data-bind="text: $data"></span> <br>
+						<!-- /ko -->
+					</p>
+					<p> <b>Facts:</b> <br>
+						<!-- ko foreach: facts, updateListviewOnChange:facts -->
+						<span data-bind="text: $data"></span> <br>
+						<!-- /ko -->
+					</p>
+					<p> <b>LinkedIn page: </b> <br>
+						<a data-bind="attr: { href: linkedin() }"><span data-bind="text: linkedin()"></span></a>
+					</p>
+					<p> <b>Twitter: </b> <br>
+						<span data-bind="text: twitterlink()"></span>
+					</p>
+					<p> <b> Facebook Page: </b> <br> 
+						<a data-bind="attr: { href: fblink() }"><span data-bind="text: fblink()"></span></a>
+					</p>
+					<p> <b> RSS Feed: </b> <br>
+						<span data-bind="text: rssfeed()"></span></p>
+					</div>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Company at a Glance Page-->
+		
+		<!-- Beginning Company Detail Page-->
+		<div data-role="page" id="companyDetail">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<a href="#home" data-role="button" data-theme="e" data-icon="home">Home</a>
+				<h1 data-bind="text: name()"></h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">	
+					<img data-bind="attr: { src: 'imgs/logos/' + logoUrl() }" class="summaryLogo"/>
+					<div>
+						<p> <b>They look for: </b> <br>
+							<!-- ko foreach: lookfor, updateListviewOnChange: lookfor -->
+								<span data-bind="text: $data"></span> <br>
+							<!-- /ko -->
+						</p>
+						<p> <b>Overview: </b> <br> 
+							<!-- ko foreach: overview, updateListviewOnChange: overview -->
+								<span data-bind="text: $data"></span> <br>
+							<!-- /ko -->
+						</p>
+						<p> <b>Mission:</b> <br>
+							<!-- ko foreach: mission, updateListviewOnChange: mission -->
+								<span data-bind="text: $data"></span> <br>
+							<!-- /ko -->
+						</p>
+						<p> <b>Goals: </b> <br>
+							<!-- ko foreach: goals, updateListviewOnChange: goals -->
+								<span data-bind="text: $data"></span> <br>
+							<!-- /ko -->
+						</p>
+						<p> <b>Business Model: </b> <br>
+							<!-- ko foreach: businessModel, updateListviewOnChange: businessModel -->
+								<span data-bind="text: $data"></span> <br>
+							<!-- /ko -->
+						</p>
+						<p> <b> Apply at: </b> <br>
+							<a data-bind="attr: { href: applylink() }"><span data-bind="text: applylink()"></span></a>
+						</p> 
+					</div>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-theme="b" data-id="SHPEFooter">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a href="#facebook" data-role="button">
+							<img src="imgs/footer/fbBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#calendar" data-role="button">
+							<img src="imgs/footer/calendarBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#eBoard" data-role="button">
+							<img src="imgs/footer/eboardBtn.png" class="buttons"/></a>
+						</li>
+						<li>
+							<a href="#companies" data-role="button">
+							<img src="imgs/footer/companyBtn.png" class="buttons"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end Company Detail Page-->
+		
+		<!-- Beginning Dev-Team Page-->
+		<div data-role="page" id="devTeam">
+			<div data-role="header" data-theme="b" data-position="fixed" data-id="SHPEHeader">
+				<h1>Dev-Team contact</h1>
+				<a href="#" data-role="button" data-rel="back" data-theme="e" data-icon="back">Back</a>
+			</div>
+			
+			<div data-role="content">
+				<div align="center">
+					<img src="imgs/devTeam.jpg" class="nerd">
+					<h1>YOU ARE AWESOME!</h1>
+					<p> Thank you for using the Beta version 1.0 of the SHPE-UF app. Please contact us for any questions or suggestions.</p>
+					<h3> Developer Team Contact Information: </h3>
+					<p>Email: <a href="mailto:shpeuf.app@gmail.com">shpeuf.app@gmail.com</a></p>
+					<p>You can also find us on Facebook by visiting our facebook page, <a href="http://www.facebook.com/shpeuf.app.7"> SHPE-UF app</a>.</p>
+				</div>
+			</div>
+
+		</div><!-- end Dev-Team Page-->
+	
+	</body>
+</html>
